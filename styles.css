@@ -1,0 +1,91 @@
+h1, p, a, li, ul, html, body {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   text-decoration: none;
+}
+
+.navbar-outer {
+   background: #333;
+   width: 100%;
+   position: fixed;
+   border-bottom: 4px solid #222;
+}
+
+.navbar-inner {
+   display: grid;
+   grid-template-columns: 1fr 5fr;
+   text-align: center;
+   margin: 0 20%;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-logo {
+   width: 100%;
+   background-color: #26b864;
+   padding: 0.5em 0;
+   margin: 0.5em 0;
+   border-bottom: 4px solid #111;
+   border-radius: 8px;
+}
+
+.navbar-logo * {
+   color: #ffffff;
+   display: inline-block;
+   vertical-align: middle;
+   padding: 0 0.5em;
+}
+
+.company-name {
+   font-size: 1.5em;
+}
+
+.logo, .logo * {
+   width: 2.7em;
+   height: 2.7em;
+}
+
+.navbar-links {
+   display: flex;
+   align-items: center;
+}
+
+.links {
+   width: 100%;
+}
+
+.links * {
+   color: #ffffff;
+   font-size: 1.15em;
+   display: inline-block;
+   vertical-align: middle;
+   padding: 0 0.2em;
+}
+
+.sign-in {
+   float: right;
+}
+
+.section {
+   margin: 0 20%;
+}
+
+.landing {
+   background-color: #333;
+}
+
+.landing-image {
+   margin: 5em 0 0 0;
+   width: 100%;
+}
+
+.landing-images {
+   display: flex;
+   justify-content: center;
+}
+
+.slider-image {
+   width: 11em;
+   height: 5.5em;
+   padding: 0.8em 1em;
+}
