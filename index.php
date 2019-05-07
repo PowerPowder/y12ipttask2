@@ -6,6 +6,7 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Laptop Business</title>
    <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="animations.css">
 </head>
 <body>
    <div id="wrapper">
@@ -21,7 +22,6 @@
                   <li><a href="products">PRODUCTS</a></li>
                   <li><a href="services">SERVICES</a></li>
                   <li><a href="contact">CONTACT</a></li>
-                  <li><a href="about">ABOUT</a></li>
                   <li class="sign-in"><a href="login">SIGN-IN</a></li>
                </ul>
             </div>
@@ -38,14 +38,44 @@
             <img class="slider-image" src="images/temp-background.jpg">
          </div>
       </div>
-      <div class="section products">
-         Best Selling products
-      </div>
       <div class="section services">
-         What we also do
+         <ul class="services-cards">
+            <li class="card">
+               <img class="card-image" src="images/temp-background.jpg">
+               <h3>Title</h3>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, odit quae? Ipsa voluptates sequi dolor ab placeat ducimus neque eum?</p>
+            </li>
+            <li class="card">
+               <img class="card-image" src="images/temp-background.jpg">
+               <h3>Title</h3>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, odit quae? Ipsa voluptates sequi dolor ab placeat ducimus neque eum?</p>
+            </li>
+            <li class="card">
+               <img class="card-image" src="images/temp-background.jpg">
+               <h3>Title</h3>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, odit quae? Ipsa voluptates sequi dolor ab placeat ducimus neque eum?</p>
+            </li>
+            <li class="card">
+               <img class="card-image" src="images/temp-background.jpg">
+               <h3>Title</h3>
+               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, odit quae? Ipsa voluptates sequi dolor ab placeat ducimus neque eum?</p>
+            </li>
+         </ul>
       </div>
-      <div class="section about">
-         Who are we
+      <div class="section products">
+         <!-- <form action="">
+            <input type="text">
+         </form> -->
+         <div class="products">
+            <img src="images/temp-background.jpg">
+            <img src="images/temp-background.jpg">
+            <img src="images/temp-background.jpg">
+            <img src="images/temp-background.jpg">
+            <img src="images/temp-background.jpg">
+            <img src="images/temp-background.jpg">
+            <img src="images/temp-background.jpg">
+            <img src="images/temp-background.jpg">
+         </div>
       </div>
       <div class="section contact">
          How you can contact us

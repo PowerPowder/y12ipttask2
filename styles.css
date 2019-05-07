@@ -1,4 +1,4 @@
-h1, p, a, li, ul, html, body {
+h1, h3, p, a, li, ul, html, body {
    margin: 0;
    padding: 0;
    list-style: none;
@@ -88,4 +88,40 @@ h1, p, a, li, ul, html, body {
    width: 11em;
    height: 5.5em;
    padding: 0.8em 1em;
+}
+
+.services {
+   padding: 5em 0;
+}
+
+.services-cards, .card-image {
+   display: flex;
+   align-items: center;
+}
+
+.card {
+   padding: 2em 0;
+}
+
+.card * {
+   text-align: center;
+}
+
+.card h3 {
+   padding: 0.5em 0;
+}
+
+.card-image {
+   width: 11em;
+   height: 5em;
+}
+
+.products {
+   display: flex;
+   align-items: center;
+}
+
+.products * {
+   width: 11em;
+   height: 5em;
 }
