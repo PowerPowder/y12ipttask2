@@ -142,11 +142,44 @@ h1, h3, p, a, li, ul, html, body {
 .product-wrapper {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
+   padding-bottom: 5em;
+}
+
+.product {
+   padding: 1em;
+   width: 15em;
 }
 
 .product img{
-   width: 11em;
-   height: 5em;
-   padding: 0.5em;
-   margin: 0 auto;
+   width: 15em;
+   height: 15em;
+   display: block;
+   margin: auto;
+}
+
+.contact {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+.contact-form {
+   display: inline;
+}
+
+.map {
+   width: 100%;
+   height: 100%;
+}
+
+.test {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+.name, .email {
+   width: 100%;
+}
+
+.subject, .message {
+   width: 100%;
 }

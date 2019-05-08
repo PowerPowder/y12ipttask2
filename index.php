@@ -78,42 +78,42 @@
          </form> -->
          <div class="product-wrapper">
             <div class="product">
-               <img src="images/temp-background.jpg">
-               <h3>Lorem ipsum dolor sit amet.</h3>
+               <img src="images/products/product1.jpg">
+               <h3>Lorem ipsum dolor</h3>
                <p>Price: $99.99</p>
             </div>
             <div class="product">
-               <img src="images/temp-background.jpg">
-               <h3>Lorem ipsum dolor sit amet.</h3>
+               <img src="images/products/product2.jpg">
+               <h3>Lorem ipsum dolor</h3>
                <p>Price: $99.99</p>
             </div>
             <div class="product">
-               <img src="images/temp-background.jpg">
-               <h3>Lorem ipsum dolor sit amet.</h3>
+               <img src="images/products/product3.jpg">
+               <h3>Lorem ipsum dolor</h3>
                <p>Price: $99.99</p>
             </div>
             <div class="product">
-               <img src="images/temp-background.jpg">
-               <h3>Lorem ipsum dolor sit amet.</h3>
+               <img src="images/products/product4.jpg">
+               <h3>Lorem ipsum dolor</h3>
                <p>Price: $99.99</p>
             </div>
             <div class="product">
-               <img src="images/temp-background.jpg">
-               <h3>Lorem ipsum dolor sit amet.</h3>
+               <img src="images/products/product5.jpg">
+               <h3>Lorem ipsum dolor</h3>
                <p>Price: $99.99</p>
             </div>
             <div class="product">
-               <img src="images/temp-background.jpg">
-               <h3>Lorem ipsum dolor sit amet.</h3>
+               <img src="images/products/product6.jpg">
+               <h3>Lorem ipsum dolor</h3>
                <p>Price: $99.99</p>
             </div>
             <div class="product">
-               <img src="images/temp-background.jpg">
-               <h3>Lorem ipsum dolor sit amet.</h3>
+               <img src="images/products/product7.jpg">
+               <h3>Lorem ipsum dolor</h3>
                <p>Price: $99.99</p>
             </div>
             <div class="product">
-               <img src="images/temp-background.jpg">
+               <img src="images/products/product8.jpg">
                <h3>Lorem ipsum dolor sit amet.</h3>
                <p>Price: $99.99</p>
             </div>
@@ -129,7 +129,15 @@
       </div>
 
       <div class="section contact">
-         How you can contact us
+         <iframe class="map" src="https://maps.google.com/maps?q=Gosford&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+         <form class="contact-form">
+            <div class="test">
+               <input class="name" type="text" placeholder="Name">
+               <input class="email" type="email" placeholder="Email">
+            </div>
+            <input class="subject" type="text" placeholder="Subject">
+            <input class="message" type="text" placeholder="Message">
+         </form>
       </div>
    </div>
 </body>
