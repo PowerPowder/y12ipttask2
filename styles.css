@@ -90,13 +90,36 @@ h1, h3, p, a, li, ul, html, body {
    padding: 0.8em 1em;
 }
 
-.services {
-   padding: 5em 0;
+.divider {
+   width: 100%;
+   text-align: center;
+   padding: 4em 0;
+   border-top: 1px solid #e1e6e9;
 }
 
-.services-cards, .card-image {
+.divider * {
+   display: inline;
+   vertical-align: middle;
+   text-align: center;
+}
+
+.divider img {
+   width: 2em;
+   margin: auto 0;
+}
+
+.services {
+   padding: 5em 0;;
+}
+
+.services-cards {
    display: flex;
    align-items: center;
+}
+
+.card-image {
+   margin: 0 auto;
+   display: flex;
 }
 
 .card {
@@ -116,12 +139,14 @@ h1, h3, p, a, li, ul, html, body {
    height: 5em;
 }
 
-.products {
-   display: flex;
-   align-items: center;
+.product-wrapper {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
 }
 
-.products * {
+.product img{
    width: 11em;
    height: 5em;
+   padding: 0.5em;
+   margin: 0 auto;
 }

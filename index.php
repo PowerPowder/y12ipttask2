@@ -38,6 +38,7 @@
             <img class="slider-image" src="images/temp-background.jpg">
          </div>
       </div>
+      
       <div class="section services">
          <ul class="services-cards">
             <li class="card">
@@ -62,21 +63,71 @@
             </li>
          </ul>
       </div>
+     
+      <div class="section">
+         <div class="divider">
+            <img src="images/temp-background.jpg">
+            <h1>Products</h1>
+            <img src="images/temp-background.jpg">
+         </div>
+      </div>
+
       <div class="section products">
          <!-- <form action="">
             <input type="text">
          </form> -->
-         <div class="products">
+         <div class="product-wrapper">
+            <div class="product">
+               <img src="images/temp-background.jpg">
+               <h3>Lorem ipsum dolor sit amet.</h3>
+               <p>Price: $99.99</p>
+            </div>
+            <div class="product">
+               <img src="images/temp-background.jpg">
+               <h3>Lorem ipsum dolor sit amet.</h3>
+               <p>Price: $99.99</p>
+            </div>
+            <div class="product">
+               <img src="images/temp-background.jpg">
+               <h3>Lorem ipsum dolor sit amet.</h3>
+               <p>Price: $99.99</p>
+            </div>
+            <div class="product">
+               <img src="images/temp-background.jpg">
+               <h3>Lorem ipsum dolor sit amet.</h3>
+               <p>Price: $99.99</p>
+            </div>
+            <div class="product">
+               <img src="images/temp-background.jpg">
+               <h3>Lorem ipsum dolor sit amet.</h3>
+               <p>Price: $99.99</p>
+            </div>
+            <div class="product">
+               <img src="images/temp-background.jpg">
+               <h3>Lorem ipsum dolor sit amet.</h3>
+               <p>Price: $99.99</p>
+            </div>
+            <div class="product">
+               <img src="images/temp-background.jpg">
+               <h3>Lorem ipsum dolor sit amet.</h3>
+               <p>Price: $99.99</p>
+            </div>
+            <div class="product">
+               <img src="images/temp-background.jpg">
+               <h3>Lorem ipsum dolor sit amet.</h3>
+               <p>Price: $99.99</p>
+            </div>
+         </div>
+      </div>
+      
+      <div class="section">
+         <div class="divider">
             <img src="images/temp-background.jpg">
-            <img src="images/temp-background.jpg">
-            <img src="images/temp-background.jpg">
-            <img src="images/temp-background.jpg">
-            <img src="images/temp-background.jpg">
-            <img src="images/temp-background.jpg">
-            <img src="images/temp-background.jpg">
+            <h1>Contact</h1>
             <img src="images/temp-background.jpg">
          </div>
       </div>
+
       <div class="section contact">
          How you can contact us
       </div>
