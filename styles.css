@@ -160,10 +160,18 @@ h1, h3, p, a, li, ul, html, body {
 .contact {
    display: grid;
    grid-template-columns: 1fr 1fr;
+   padding-bottom: 8em;
 }
 
 .contact-form {
    display: inline;
+   margin: 0 1em 1em 1em;
+}
+
+.top-creds *, .subject, .message {
+   border: none;
+   border-bottom: 1px solid #000;
+   background: #f6f7f8;
 }
 
 .map {
@@ -171,15 +179,33 @@ h1, h3, p, a, li, ul, html, body {
    height: 100%;
 }
 
-.test {
+.top-creds {
    display: grid;
    grid-template-columns: 1fr 1fr;
+   grid-gap: 0 2em;
 }
 
 .name, .email {
    width: 100%;
+   margin-bottom: 2em;
 }
 
 .subject, .message {
    width: 100%;
+   margin-bottom: 2em;
+}
+
+.footer {
+   background: #26b864;
+   padding: 1em 0;
+}
+
+.footer * {
+   display: inline;
+   text-align: center;
+}
+
+.footer p {
+   color: #fff;
+   font-size: 1.5em;
 }

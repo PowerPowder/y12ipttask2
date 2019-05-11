@@ -6,7 +6,7 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>Laptop Business</title>
    <link rel="stylesheet" href="styles.css">
-   <link rel="stylesheet" href="animations.css">
+   <link rel="stylesheet" href="font-awesome.min.css">
 </head>
 <body>
    <div id="wrapper">
@@ -73,50 +73,32 @@
       </div>
 
       <div class="section products">
-         <!-- <form action="">
-            <input type="text">
-         </form> -->
+         <form action="">
+            <input class="" type="text" placeholder="">
+         </form>
          <div class="product-wrapper">
-            <div class="product">
+            <!--<div class="product">
                <img src="images/products/product1.jpg">
                <h3>Lorem ipsum dolor</h3>
                <p>Price: $99.99</p>
-            </div>
-            <div class="product">
-               <img src="images/products/product2.jpg">
-               <h3>Lorem ipsum dolor</h3>
-               <p>Price: $99.99</p>
-            </div>
-            <div class="product">
-               <img src="images/products/product3.jpg">
-               <h3>Lorem ipsum dolor</h3>
-               <p>Price: $99.99</p>
-            </div>
-            <div class="product">
-               <img src="images/products/product4.jpg">
-               <h3>Lorem ipsum dolor</h3>
-               <p>Price: $99.99</p>
-            </div>
-            <div class="product">
-               <img src="images/products/product5.jpg">
-               <h3>Lorem ipsum dolor</h3>
-               <p>Price: $99.99</p>
-            </div>
-            <div class="product">
-               <img src="images/products/product6.jpg">
-               <h3>Lorem ipsum dolor</h3>
-               <p>Price: $99.99</p>
-            </div>
-            <div class="product">
-               <img src="images/products/product7.jpg">
-               <h3>Lorem ipsum dolor</h3>
-               <p>Price: $99.99</p>
-            </div>
-            <div class="product">
-               <img src="images/products/product8.jpg">
-               <h3>Lorem ipsum dolor sit amet.</h3>
-               <p>Price: $99.99</p>
-            </div>
+            </div> -->
+
+            <?php
+               include 'db.php';
+               mysql_connect($host, $username, $password) or die(mysql_error());
+               mysql_select_db($db_name) or die(mysql_error());
+
+               $data = mysql_query("SELECT * FROM $tbl_name") or die(mysql_error());
+
+               while ($info = mysql_fetch_array($data)) {
+                  $id = $info['id'];
+                  $name = $info['name'];
+                  $price = $info['price'];
+
+                  print '<div class="product"><img src="images/products/' . $info['id'] . '.jpg"><h3>' . $info['name'] . '</h3><p>Price: $' . $info['price'] . '</p></div>';
+               }
+            ?>
+
          </div>
       </div>
       
@@ -131,13 +113,27 @@
       <div class="section contact">
          <iframe class="map" src="https://maps.google.com/maps?q=Gosford&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
          <form class="contact-form">
-            <div class="test">
+            <div class="top-creds">
                <input class="name" type="text" placeholder="Name">
                <input class="email" type="email" placeholder="Email">
             </div>
             <input class="subject" type="text" placeholder="Subject">
             <input class="message" type="text" placeholder="Message">
+            <input type="submit">
          </form>
+      </div>
+
+      <div class="footer">
+         <div class="section">
+            <p>Copyright &copy Laptop Business</p>
+            <div class="social-media">
+               <a href="#" class="fa fa-facebook"></a>
+               <a href="#" class="fa fa-facebook"></a>
+               <a href="#" class="fa fa-facebook"></a>
+               <a href="#" class="fa fa-facebook"></a>
+               <a href="#" class="fa fa-facebook"></a>
+            </div>
+         </div>
       </div>
    </div>
 </body>
