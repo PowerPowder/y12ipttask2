@@ -26,7 +26,7 @@
       case stristr($sort, 'Brand'):
          $query = 'ORDER BY brand';
          break;
-      case stristr($sort, 'Category'):
+      case stristr($sort, 'Type'):
          $query = 'ORDER BY category';
          break;
       case stristr($sort, 'Availability'):
