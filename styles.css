@@ -139,6 +139,26 @@ h1, h3, p, a, li, ul, html, body {
    height: 5em;
 }
 
+.sorting-wrapper {
+   display: grid;
+   grid-template-columns: 1fr 3fr 1fr;
+}
+
+.sorting {
+   display: grid;
+   grid-template-columns: 2fr 1fr 1fr; 
+   grid-gap: 0 0.5em;
+}
+
+.advanced {
+   /*display: grid;
+   grid-template-columns: 2fr 1fr 2fr 1fr;
+   grid-gap: 0 0.5em;
+   padding-top: 0.5em;*/
+
+   display: none;
+}
+
 .product-wrapper {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
@@ -148,6 +168,12 @@ h1, h3, p, a, li, ul, html, body {
 .product {
    padding: 1em;
    width: 15em;
+   border: 1px solid #fff;
+}
+
+.product:hover {
+   border: 1px solid #aaa;
+   cursor: pointer;
 }
 
 .product img{

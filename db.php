@@ -1,7 +1,9 @@
 <?php
-   $host = "localhost";
-   $username = "student1";
-   $password = "password1";
-   $db_name = "db1";
-   $tbl_name = "products";
+   $dbHost="localhost"; 
+   $dbUsername="reagan";
+   $dbPassword="password";
+   $dbName="db1";
+   $tblName="products";
+
+   $conn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
 ?>
