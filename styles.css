@@ -159,10 +159,14 @@ h1, h3, p, a, li, ul, html, body {
    display: none;
 }
 
-.product-wrapper {
+#product-wrapper {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
    padding-bottom: 5em;
+}
+
+.products {
+   padding-bottom: 1em;
 }
 
 .product {
