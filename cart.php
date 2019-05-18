@@ -62,16 +62,24 @@
       <div class="cart">
          <div id="product-wrapper" class="section">
             <?php
-               $array = explode(' ', $_COOKIE['cart']);
                $conn = mysqli_connect("localhost", "reagan", "password", "db1");
+               $cart = explode(' ', $_COOKIE['cart']);
+               $cart = (array_unique($cart));
 
-               for ($i = 0; $i < count($array); $i++) {
-                  $sql = 'SELECT * FROM products WHERE id = ' . $array[$i];
+               /*$string = 'abc fox fox fox ghi xyz';
+               $substring = 'fox';
+               $substringCount = substr_count($string, $substring);
+                 
+               echo 'In '.$string.' '.$substring.' appears '.$substringCount.' times';*/
+
+               foreach ($cart as &$value) {
+                  $sql = 'SELECT * FROM products WHERE id = ' . $value;
                   $result = mysqli_query($conn, $sql);
                   $resultCheck = mysqli_num_rows($result);
 
                   if ($resultCheck > 0) {
                      while ($data = mysqli_fetch_assoc($result)) {
+
                         print '<div class="product"><img src=' . $data['image'] . '><div><h3>' . $data['brand'] . ': ' . $data['name'] . '</h3><p>Price: $' . $data['price'] .'</p></div></div>';
                      }
                   }
@@ -82,34 +90,20 @@
             <h1>Cost:</h1>
             <?php
                $total_cost = 0;
-               $id = 0;
-               $counter = 1;
 
-               for ($i = 0; $i < count($array); $i++) {
-                  $sql = 'SELECT * FROM products WHERE id = ' . $array[$i];
+               foreach ($cart as &$value) {
+                  $sql = 'SELECT * FROM products WHERE id = ' . $value;
                   $result = mysqli_query($conn, $sql);
                   $resultCheck = mysqli_num_rows($result);
 
                   if ($resultCheck > 0) {
                      while ($data = mysqli_fetch_assoc($result)) {
-                        if ($id == $data['id']) {
-                           $counter++;
-                        } else {
-                           $counter = 1;
-
-                           if ($counter > 1) {
-                              print $counter . 'x';
-                           }
-
-                           print '<div style="display: grid; grid-template-columns: 1fr 1fr"><span>Product - '.$data['id'].'</span><span>'.$data['price'].'</span></div><br>';
-                        }
+                        print '<div style="display: grid; grid-template-columns: 1fr 1fr"><span>Product - '.$data['id'].'</span><span>'.$data['price'].'</span></div><br>';
 
                         $total_cost += $data['price'];
-                        $id = $data['id'];
-                        echo $id;
                      }
-                  }
                }
+            }
 
                print '<h3>Total: $'.$total_cost.'</h3><br>';
                print '<a class="buy-now" href="index.html" onclick="setCookie(\'cart\', \'\');">Purchase</a>';
