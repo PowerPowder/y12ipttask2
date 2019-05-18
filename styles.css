@@ -189,6 +189,23 @@ h1, h3, p, a, li, ul, html, body {
    margin: auto;
 }
 
+.buy-now {
+   border: none;
+   border-bottom: 3px solid #000;
+   width: 30%;
+   border-radius: 6px;
+   text-align: center;
+   margin: 0 auto;
+   padding: 0.5em;
+   background: #26b864;
+   color: #fff;
+}
+
+.buy-now:active {
+   border: none;
+   border-top: 3px solid #fff;
+}
+
 .contact {
    display: grid;
    grid-template-columns: 1fr 1fr;
