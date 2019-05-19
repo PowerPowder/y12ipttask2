@@ -221,6 +221,7 @@ h1, h3, p, a, li, ul, html, body {
    border: none;
    border-bottom: 1px solid #000;
    background: #f6f7f8;
+   padding: 0.5em 0;
 }
 
 .map {
@@ -238,6 +239,10 @@ h1, h3, p, a, li, ul, html, body {
    width: 100%;
    margin-bottom: 2em;
 }
+
+/*.contact-submit {
+   text
+}*/
 
 .subject, .message {
    width: 100%;

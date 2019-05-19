@@ -2,13 +2,14 @@
 <html>
 <head>
    <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="media-queries.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
    <script src="main.js"></script>
 
    <style>
       .content {
          padding-top: 7.5em;
          text-align: center;
-         border: 1px solid #ccc;
       }
 
       #product-wrapper {
@@ -44,19 +45,19 @@
             </div>
             <div class="navbar-links">
                <ul class="links">
-                  <li><a href="home">HOME</a></li>
-                  <li><a href="index.html#products">PRODUCTS</a></li>
-                  <li><a href="index.html#services">SERVICES</a></li>
-                  <li><a href="index.html#contact">CONTACT</a></li>
-                  <li><a href="cart.php">CART</a></li>
-                  <li class="sign-in"><a href="login.html">SIGN-IN</a></li>
+                  <li><a href="index.html"><i class="fas fa-home"></i></a><a href="home">HOME</a></li>
+                  <li><a href="index.html#products"><i class="fas fa-laptop"></i></a><a href="index.html#products">PRODUCTS</a></li>
+                  <li><a href="index.html#services"><i class="fas fa-clipboard-list"></i></a><a href="index.html#services">SERVICES</a></li>
+                  <li><a href="index.html#contact"><i class="fas fa-address-card"></i></a><a href="index.html#contact">CONTACT</a></li>
+                  <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a><a href="cart.php">CART</a></li>
+                  <li class="sign-in"><a href="login.html"><i class="fas fa-sign-in-alt"></i></a><a href="login.html">SIGN-IN</a></li>
                </ul>
             </div>
          </div>
       </div>
 
       <div class="content">
-         <h1>Cart</h1>
+         <h1 style="margin: 0 20% 1em 20%; border-bottom: 1px solid #ccc;">Cart</h1>
       </div>
       
       <div class="cart">
@@ -65,6 +66,7 @@
                $conn = mysqli_connect("localhost", "reagan", "password", "db1");
                $cart = explode(' ', $_COOKIE['cart']);
                $cart = (array_unique($cart));
+               $num_of_products = count($cart);
 
                /*$string = 'abc fox fox fox ghi xyz';
                $substring = 'fox';
@@ -73,6 +75,11 @@
                echo 'In '.$string.' '.$substring.' appears '.$substringCount.' times';*/
 
                foreach ($cart as &$value) {
+                  if ($value == "") {
+                     echo "<div></div><h3 style='text-align:center;'>Cart is empty</h3><div></div>";
+                     $num_of_products = 0;
+                  }
+
                   $sql = 'SELECT * FROM products WHERE id = ' . $value;
                   $result = mysqli_query($conn, $sql);
                   $resultCheck = mysqli_num_rows($result);
@@ -91,6 +98,8 @@
             <?php
                $total_cost = 0;
 
+               print '<h4>'.$num_of_products.' in total</h4>';
+
                foreach ($cart as &$value) {
                   $sql = 'SELECT * FROM products WHERE id = ' . $value;
                   $result = mysqli_query($conn, $sql);
@@ -98,7 +107,8 @@
 
                   if ($resultCheck > 0) {
                      while ($data = mysqli_fetch_assoc($result)) {
-                        print '<div style="display: grid; grid-template-columns: 1fr 1fr"><span>Product - '.$data['id'].'</span><span>'.$data['price'].'</span></div><br>';
+                        //print '<div style="display: grid; grid-template-columns: 1fr 1fr"><span>Product - '.$data['id'].'</span><span>'.$data['price'].'</span></div><br>';
+                        print '<div style="display: grid; grid-template-columns: 1fr 2fr; grid-gap: 0.5em;"><span style="text-align:right; padding-bottom: 0.5em;">'.$data['price'].'</span><span>Product - '.$data['id'].'</span></div>';
 
                         $total_cost += $data['price'];
                      }
