@@ -45,10 +45,10 @@
             </div>
             <div class="navbar-links">
                <ul class="links">
-                  <li><a href="index.html"><i class="fas fa-home"></i></a><a href="home">HOME</a></li>
-                  <li><a href="index.html#products"><i class="fas fa-laptop"></i></a><a href="index.html#products">PRODUCTS</a></li>
-                  <li><a href="index.html#services"><i class="fas fa-clipboard-list"></i></a><a href="index.html#services">SERVICES</a></li>
-                  <li><a href="index.html#contact"><i class="fas fa-address-card"></i></a><a href="index.html#contact">CONTACT</a></li>
+                  <li><a href="index.php"><i class="fas fa-home"></i></a><a href="index.php">HOME</a></li>
+                  <li><a href="index.php#products"><i class="fas fa-laptop"></i></a><a href="index.php#products">PRODUCTS</a></li>
+                  <li><a href="index.php#services"><i class="fas fa-clipboard-list"></i></a><a href="index.php#services">SERVICES</a></li>
+                  <li><a href="index.php#contact"><i class="fas fa-address-card"></i></a><a href="index.php#contact">CONTACT</a></li>
                   <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a><a href="cart.php">CART</a></li>
                   <li class="sign-in"><a href="login.html"><i class="fas fa-sign-in-alt"></i></a><a href="login.html">SIGN-IN</a></li>
                </ul>
@@ -116,7 +116,7 @@
             }
 
                print '<h3>Total: $'.$total_cost.'</h3><br>';
-               print '<a class="buy-now" href="index.html" onclick="setCookie(\'cart\', \'\');">Purchase</a>';
+               print '<a class="buy-now" href="index.php" onclick="setCookie(\'cart\', \'\');">Purchase</a>';
             ?>
          </div>
          <div></div>
@@ -126,14 +126,15 @@
          <div class="section">
             <p>Copyright &copy Laptop Business</p>
             <div class="social-media">
-               <a href="#" class="fa fa-facebook"></a>
-               <a href="#" class="fa fa-facebook"></a>
-               <a href="#" class="fa fa-facebook"></a>
-               <a href="#" class="fa fa-facebook"></a>
-               <a href="#" class="fa fa-facebook"></a>
+               <a href="#" class="fab fa-facebook-f"></a>
+               <a href="#" class="fab fa-twitter"></a>
+               <a href="#" class="fab fa-instagram"></a>
+               <a href="#" class="fab fa-linkedin"></a>
+               <a href="#" class="fas fa-rss"></a>
             </div>
          </div>
       </div>
    </div>
 </body>
 </html>
+
