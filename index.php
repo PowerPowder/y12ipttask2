@@ -6,20 +6,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <link rel="stylesheet" href="styles.css">
-   <link rel="stylesheet" href="media-queries.css">
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/media-queries.css">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
    <script src="main.js"></script>
-
-   <style>
-      #cart-items {
-         background: #26b864;
-         border-radius: 5px;
-         padding: 0.5em;
-         margin: 0 0.5em;
-      }
-   </style> 
 </head>
 <body>
    <div id="wrapper">

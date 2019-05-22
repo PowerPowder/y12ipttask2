@@ -1,9 +1,15 @@
+<?php
+   $cart = array_unique(explode(' ', $_COOKIE['cart']));
+   $num_of_products = count($cart);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-   <link rel="stylesheet" href="styles.css">
-   <link rel="stylesheet" href="media-queries.css">
+   <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/media-queries.css">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
    <script src="main.js"></script>
 
    <style>
@@ -45,12 +51,12 @@
             </div>
             <div class="navbar-links">
                <ul class="links">
-                  <li><a href="index.php"><i class="fas fa-home"></i></a><a href="index.php">HOME</a></li>
-                  <li><a href="index.php#products"><i class="fas fa-laptop"></i></a><a href="index.php#products">PRODUCTS</a></li>
-                  <li><a href="index.php#services"><i class="fas fa-clipboard-list"></i></a><a href="index.php#services">SERVICES</a></li>
-                  <li><a href="index.php#contact"><i class="fas fa-address-card"></i></a><a href="index.php#contact">CONTACT</a></li>
-                  <li><a href="cart.php"><i class="fas fa-shopping-cart"></i></a><a href="cart.php">CART</a></li>
-                  <li class="sign-in"><a href="login.html"><i class="fas fa-sign-in-alt"></i></a><a href="login.html">SIGN-IN</a></li>
+                  <li><a class="icon" href="index.php"><i class="fas fa-home"></i></a><a class="text" href="index.php">HOME</a></li>
+                  <li><a class="icon" href="index.php#products"><i class="fas fa-laptop"></i></a><a class="text" href="index.php#products">PRODUCTS</a></li>
+                  <li><a class="icon" href="index.php#services"><i class="fas fa-clipboard-list"></i></a><a class="text" href="index.php#services">SERVICES</a></li>
+                  <li><a class="icon" href="index.php#contact"><i class="fas fa-address-card"></i></a><a class="text" href="index.php#contact">CONTACT</a></li>
+                  <li><a class="icon" href="cart.php"><i class="fas fa-shopping-cart"></i></a><a class="text" href="cart.php">CART </a><p id="cart-items"><script type="text/javascript" src="main.js"></script></p></li>
+                  <li class="sign-in"><a class="icon" href="login.html"><i class="fas fa-sign-in-alt"></i></a><a class="text" href="login.html">SIGN-IN</a></li>
                </ul>
             </div>
          </div>
