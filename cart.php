@@ -64,15 +64,9 @@
          <div id="product-wrapper" class="section">
             <?php
                $conn = mysqli_connect("localhost", "reagan", "password", "db1");
-               $cart = explode(' ', $_COOKIE['cart']);
-               $cart = (array_unique($cart));
+               $cart = array_unique(explode(' ', $_COOKIE['cart']));
+               //$cart = (array_unique($cart));
                $num_of_products = count($cart);
-
-               /*$string = 'abc fox fox fox ghi xyz';
-               $substring = 'fox';
-               $substringCount = substr_count($string, $substring);
-                 
-               echo 'In '.$string.' '.$substring.' appears '.$substringCount.' times';*/
 
                foreach ($cart as &$value) {
                   if ($value == "") {

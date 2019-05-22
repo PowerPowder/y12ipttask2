@@ -1,11 +1,25 @@
+<?php
+   $cart = array_unique(explode(' ', $_COOKIE['cart']));
+   $num_of_products = count($cart);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="media-queries.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
-  <script src="main.js"></script>
+   <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="media-queries.css">
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+   <script src="main.js"></script>
+
+   <style>
+      #cart-items {
+         background: #26b864;
+         border-radius: 5px;
+         padding: 0.5em;
+         margin: 0 0.5em;
+      }
+   </style> 
 </head>
 <body>
    <div id="wrapper">
@@ -21,7 +35,7 @@
                   <li><a class="icon" href="index.php#products"><i class="fas fa-laptop"></i></a><a class="text" href="index.php#products">PRODUCTS</a></li>
                   <li><a class="icon" href="index.php#services"><i class="fas fa-clipboard-list"></i></a><a class="text" href="index.php#services">SERVICES</a></li>
                   <li><a class="icon" href="index.php#contact"><i class="fas fa-address-card"></i></a><a class="text" href="index.php#contact">CONTACT</a></li>
-                  <li><a class="icon" href="cart.php"><i class="fas fa-shopping-cart"></i></a><a class="text" href="cart.php">CART <?php echo 6?></a></li>
+                  <li><a class="icon" href="cart.php"><i class="fas fa-shopping-cart"></i></a><a class="text" href="cart.php">CART </a><p id="cart-items"><script type="text/javascript" src="main.js"></script></p></li>
                   <li class="sign-in"><a class="icon" href="login.html"><i class="fas fa-sign-in-alt"></i></a><a class="text" href="login.html">SIGN-IN</a></li>
                </ul>
             </div>
@@ -67,9 +81,9 @@
      
       <div class="section">
          <div class="divider">
-            <img src="images/temp-background.jpg">
+            <i class="fas fa-arrow-left"></i>
             <h1>Products</h1>
-            <img src="images/temp-background.jpg">
+            <i class="fas fa-arrow-right"></i>
          </div>
       </div>
 
@@ -77,7 +91,7 @@
          <form class="sorting-wrapper" method="post" action="">
             <div></div>
             <div class="sorting">
-               <input class="sort" list="sorting-categories" placeholder="Sort by:" name="sort-products" onchange="showUser(this.value)">
+               <input class="sort" list="sorting-categories" placeholder="Sort by:" name="sort-products" onchange="showProducts(this.value)">
                <div style="text-align:center;">
                   <span>Advanced</span>
                   <input id="advanced-search" type="checkbox" onclick="advanced_search();">
@@ -118,9 +132,9 @@
 
       <div class="section">
          <div class="divider">
-            <img src="images/temp-background.jpg">
+            <i class="fas fa-arrow-left"></i>
             <h1>Contact</h1>
-            <img src="images/temp-background.jpg">
+            <i class="fas fa-arrow-right"></i>
          </div>
       </div>
 

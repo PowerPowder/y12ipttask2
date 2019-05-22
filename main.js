@@ -12,7 +12,7 @@ function advanced_search() {
    }
 }
 
-function showUser(str) {
+function showProducts(str) {
    if (str=="") {
       document.getElementById("product-wrapper").innerHTML="";
       return;
@@ -28,7 +28,7 @@ function showUser(str) {
          document.getElementById("product-wrapper").innerHTML=this.responseText;
       }
    }
-   xmlhttp.open("GET","getuser.php?q="+str,true);
+   xmlhttp.open("GET","show_products.php?query="+str,true);
    xmlhttp.send();
 }
 
@@ -60,3 +60,17 @@ function checkCookie(id) {
       setCookie('cart', getCookie('cart') + ' ' + id);
    }
 }
+
+function items() {
+   var products = getCookie('cart');
+   products = products.split(' ').map(Number);
+
+   var cart_items = document.getElementById('cart-items');
+   if (getCookie('cart') === "") {
+      cart_items.innerHTML = 0;
+   } else {
+      cart_items.innerHTML = products.length;
+   }
+}
+
+items();

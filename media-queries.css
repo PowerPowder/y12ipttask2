@@ -6,6 +6,10 @@
    .company-name {
       display: none;
    }
+
+   #cart-items {
+      display: none;
+   }
    
    .links {
       display: grid;
