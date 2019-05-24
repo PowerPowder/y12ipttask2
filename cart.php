@@ -1,6 +1,24 @@
 <?php
-   $cart = array_unique(explode(' ', $_COOKIE['cart']));
+   $duplicates = array_count_values(explode(' ', $_COOKIE['cart']));
+   $cart = explode(' ', $_COOKIE['cart']);
    $num_of_products = count($cart);
+
+   $total_cost = 0;
+   $conn = mysqli_connect("localhost", "reagan", "password", "db1");
+
+   foreach ($cart as &$value) {
+      $sql = 'SELECT * FROM products WHERE id = ' . $value;
+      $result = mysqli_query($conn, $sql);
+      $resultCheck = mysqli_num_rows($result);
+
+      if ($resultCheck > 0) {
+         while ($data = mysqli_fetch_assoc($result)) {
+            $total_cost += $data['price'];
+         }
+      }
+   }
+
+   $cart = array_unique(explode(' ', $_COOKIE['cart']));
 ?>
 
 <!DOCTYPE html>
@@ -25,15 +43,13 @@
 
       .cart {
          display: grid;
-         grid-template-columns: 5fr 1fr;
+         grid-template-columns: 8fr 2fr;
+         grid-gap: 3em;
+         margin: 0 20%;
       }
 
       .section {
          margin: 0;
-      }
-
-      .cart {
-         margin: 0 20%;
       }
 
       .footer {
@@ -46,7 +62,7 @@
       <div class="navbar-outer">
          <div class="navbar-inner">
             <div class="navbar-logo">
-               <a class="logo" href="#"><img src="images/logo.png"></a>
+               <a class="logo" href="#"><img src="logo.png"></a>
                <h1 class="company-name">Laptops</h1>
             </div>
             <div class="navbar-links">
@@ -62,42 +78,38 @@
          </div>
       </div>
 
-      <div class="content">
-         <h1 style="margin: 0 20% 1em 20%; border-bottom: 1px solid #ccc;">Cart</h1>
-      </div>
+      <div class="content"></div>
       
       <div class="cart">
-         <div id="product-wrapper" class="section">
-            <?php
-               $conn = mysqli_connect("localhost", "reagan", "password", "db1");
-               $cart = array_unique(explode(' ', $_COOKIE['cart']));
-               //$cart = (array_unique($cart));
-               $num_of_products = count($cart);
+         <div>
+            <h1 style="text-align: center; border-bottom: 1px solid #ccc;">Cart items:</h1>
+            <div id="product-wrapper" class="section">
+               <?php
+                  $cart = array_unique(explode(' ', $_COOKIE['cart']));
+                  $num_of_products = count($cart);
 
-               foreach ($cart as &$value) {
-                  if ($value == "") {
-                     echo "<div></div><h3 style='text-align:center;'>Cart is empty</h3><div></div>";
-                     $num_of_products = 0;
-                  }
+                  foreach ($cart as &$value) {
+                     if ($value == "") {
+                        echo "<div></div><h3 style='text-align:center;'>Cart is empty</h3><div></div>";
+                        $num_of_products = 0;
+                     }
 
-                  $sql = 'SELECT * FROM products WHERE id = ' . $value;
-                  $result = mysqli_query($conn, $sql);
-                  $resultCheck = mysqli_num_rows($result);
+                     $sql = 'SELECT * FROM products WHERE id = ' . $value;
+                     $result = mysqli_query($conn, $sql);
+                     $resultCheck = mysqli_num_rows($result);
 
-                  if ($resultCheck > 0) {
-                     while ($data = mysqli_fetch_assoc($result)) {
-
-                        print '<div class="product"><img src=' . $data['image'] . '><div><h3>' . $data['brand'] . ': ' . $data['name'] . '</h3><p>Price: $' . $data['price'] .'</p></div></div>';
+                     if ($resultCheck > 0) {
+                        while ($data = mysqli_fetch_assoc($result)) {
+                           print '<div class="product"><img src=' . $data['image'] . '><div><h3>' . $data['brand'] . ': ' . $data['name'] . '</h3><p>Price: $' . $data['price'] .'</p></div></div>';
+                        }
                      }
                   }
-               }
-            ?>
-         </div>
+               ?>
+            </div>
+         </div> 
          <div class="cost">
-            <h1>Cost:</h1>
+            <h1 style="text-align: center; border-bottom: 1px solid #ccc;">Cost:</h1>
             <?php
-               $total_cost = 0;
-
                print '<h4>'.$num_of_products.' in total</h4>';
 
                foreach ($cart as &$value) {
@@ -107,13 +119,10 @@
 
                   if ($resultCheck > 0) {
                      while ($data = mysqli_fetch_assoc($result)) {
-                        //print '<div style="display: grid; grid-template-columns: 1fr 1fr"><span>Product - '.$data['id'].'</span><span>'.$data['price'].'</span></div><br>';
-                        print '<div style="display: grid; grid-template-columns: 1fr 2fr; grid-gap: 0.5em;"><span style="text-align:right; padding-bottom: 0.5em;">'.$data['price'].'</span><span>Product - '.$data['id'].'</span></div>';
-
-                        $total_cost += $data['price'];
+                        print '<div style="display: grid; grid-template-columns: 1fr 6fr 8fr; grid-gap: 0.5em;"><span style="text-align: left">x'.$duplicates[$value].'</span><span style="text-align:right; padding-bottom: 0.5em;">'.$data['price'].'</span><span>Product - '.$data['id'].'</span></div>';
                      }
+                  }
                }
-            }
 
                print '<h3>Total: $'.$total_cost.'</h3><br>';
                print '<a class="buy-now" href="index.php" onclick="setCookie(\'cart\', \'\');">Purchase</a>';

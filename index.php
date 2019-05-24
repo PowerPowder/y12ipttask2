@@ -17,7 +17,7 @@
       <div class="navbar-outer">
          <div class="navbar-inner">
             <div class="navbar-logo">
-               <a class="logo" href="#"><img src="images/logo.png"></a>
+               <a class="logo" href="#"><img src="logo.png"></a>
                <h1 class="company-name">Laptops</h1>
             </div>
             <div class="navbar-links">
@@ -83,10 +83,10 @@
             <div></div>
             <div class="sorting">
                <input class="sort" list="sorting-categories" placeholder="Sort by:" name="sort-products" onchange="showProducts(this.value)">
-               <div style="text-align:center;">
+               <!--<div style="text-align:center;">
                   <span>Advanced</span>
                   <input id="advanced-search" type="checkbox" onclick="advanced_search();">
-               </div>
+               </div>-->
                <input class="submit" type="submit" name="submit">
 
                <datalist id="sorting-categories"> 
@@ -103,7 +103,7 @@
             <div></div>
          </form>
          
-         <div class="sorting-wrapper">
+         <!--<div class="sorting-wrapper">
             <div></div>
             <form class="advanced">
                <input class="specify" placeholder="Specify" type=text name="specify">
@@ -116,7 +116,7 @@
                <input class="submit" type="submit" name="submit">
             </form>
             <div></div>
-         </div>
+         </div>-->
       </div>
 
       <div id="product-wrapper" class="section"></div>
