@@ -1,5 +1,7 @@
 html {
    scroll-behavior: smooth;
+   position: relative;
+   min-height: 100%;
 }
 
 h1, h3, p, a, li, ul, html, body {

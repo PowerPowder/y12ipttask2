@@ -53,6 +53,11 @@
       }
 
       .footer {
+         position: absolute;
+         left: 0;
+         bottom: 0;
+         width: 100%;
+         overflow: hidden;
          text-align: center;
       }
    </style>
@@ -82,7 +87,7 @@
       
       <div class="cart">
          <div>
-            <h1 style="text-align: center; border-bottom: 1px solid #ccc;">Cart items:</h1>
+            <h1 style="text-align: center; border-bottom: 1px solid #ccc; margin-bottom: 0.5em;">Cart items:</h1>
             <div id="product-wrapper" class="section">
                <?php
                   $cart = array_unique(explode(' ', $_COOKIE['cart']));
