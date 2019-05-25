@@ -1,8 +1,3 @@
-<?php
-   $cart = array_unique(explode(' ', $_COOKIE['cart']));
-   $num_of_products = count($cart);
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +34,7 @@
                   <li><a class="icon" href="index.php#services"><i class="fas fa-clipboard-list"></i></a><a class="text" href="index.php#services">SERVICES</a></li>
                   <li><a class="icon" href="index.php#contact"><i class="fas fa-address-card"></i></a><a class="text" href="index.php#contact">CONTACT</a></li>
                   <li><a class="icon" href="cart.php"><i class="fas fa-shopping-cart"></i></a><a class="text" href="cart.php">CART </a><p id="cart-items"><script type="text/javascript" src="main.js"></script></p></li>
-                  <li class="sign-in"><a class="icon" href="login.html"><i class="fas fa-sign-in-alt"></i></a><a class="text" href="login.html">SIGN-IN</a></li>
+                  <li class="sign-in"><a class="icon" href="login.php"><i class="fas fa-sign-in-alt"></i></a><a class="text" href="login.php">SIGN-IN</a></li>
                </ul>
             </div>
          </div>
@@ -49,6 +44,12 @@
          <p>If you managed to reach this page, I am truthfully sorry I have wasted your precious time.</p>
          <a href="index.php">Here is a link back to home if you don't want to move your mouse all the way to the navbar.</a>
       </div>
+
+      <!--<form action="login_process.php" method="POST">
+         <input type="text" placeholder="Username">
+         <input type="password" placeholder="Password">
+         <input type="submit">
+      </form> -->
 
       <div class="footer">
          <div class="section">
