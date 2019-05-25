@@ -45,11 +45,19 @@
          <a href="index.php">Here is a link back to home if you don't want to move your mouse all the way to the navbar.</a>
       </div>
 
-      <!--<form action="login_process.php" method="POST">
-         <input type="text" placeholder="Username">
-         <input type="password" placeholder="Password">
+      <form action="login_process.php" method="POST">
+         <b>Sign in</b>
+         <input type="text" placeholder="Username" name="username">
+         <input type="password" placeholder="Password" name="password">
          <input type="submit">
-      </form> -->
+      </form> 
+
+      <form action="sign_up_process.php" method="POST">
+         <b>Sign up</b>
+         <input type="text" placeholder="Username" name="username">
+         <input type="password" placeholder="Password" name="password">
+         <input type="submit">
+      </form> 
 
       <div class="footer">
          <div class="section">
