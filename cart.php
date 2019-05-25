@@ -6,14 +6,16 @@
    $total_cost = 0;
    $conn = mysqli_connect("localhost", "reagan", "password", "db1");
 
-   foreach ($cart as &$value) {
-      $sql = 'SELECT * FROM products WHERE id = ' . $value;
-      $result = mysqli_query($conn, $sql);
-      $resultCheck = mysqli_num_rows($result);
+   if ($cart[0] != "") {
+      foreach ($cart as &$value) {
+         $sql = 'SELECT * FROM products WHERE id = ' . $value;
+         $result = mysqli_query($conn, $sql);
+         $resultCheck = mysqli_num_rows($result);
 
-      if ($resultCheck > 0) {
-         while ($data = mysqli_fetch_assoc($result)) {
-            $total_cost += $data['price'];
+         if ($resultCheck > 0) {
+            while ($data = mysqli_fetch_assoc($result)) {
+               $total_cost += $data['price'];
+            }
          }
       }
    }
@@ -93,22 +95,24 @@
                   $cart = array_unique(explode(' ', $_COOKIE['cart']));
                   $num_of_products = count($cart);
 
-                  foreach ($cart as &$value) {
-                     if ($value == "") {
-                        echo "<div></div><h3 style='text-align:center;'>Cart is empty</h3><div></div>";
-                        $num_of_products = 0;
-                     }
+                     foreach ($cart as &$value) {
+                        if ($value == "") {
+                           echo "<div></div><h3 style='text-align:center;'>Cart is empty</h3><div></div>";
+                           $num_of_products = 0;
+                        }
 
-                     $sql = 'SELECT * FROM products WHERE id = ' . $value;
-                     $result = mysqli_query($conn, $sql);
-                     $resultCheck = mysqli_num_rows($result);
+                        if ($cart[0] != "") {
+                           $sql = 'SELECT * FROM products WHERE id = ' . $value;
+                           $result = mysqli_query($conn, $sql);
+                           $resultCheck = mysqli_num_rows($result);
 
-                     if ($resultCheck > 0) {
-                        while ($data = mysqli_fetch_assoc($result)) {
-                           print '<div class="product"><img src=' . $data['image'] . '><div><h3>' . $data['brand'] . ': ' . $data['name'] . '</h3><p>Price: $' . $data['price'] .'</p></div></div>';
+                           if ($resultCheck > 0) {
+                              while ($data = mysqli_fetch_assoc($result)) {
+                                 print '<div class="product"><img src=' . $data['image'] . '><div><h3>' . $data['brand'] . ': ' . $data['name'] . '</h3><p>Price: $' . $data['price'] .'</p></div></div>';
+                              }
+                           }
                         }
                      }
-                  }
                ?>
             </div>
          </div> 
@@ -117,14 +121,16 @@
             <?php
                print '<h4>'.$num_of_products.' in total</h4>';
 
-               foreach ($cart as &$value) {
-                  $sql = 'SELECT * FROM products WHERE id = ' . $value;
-                  $result = mysqli_query($conn, $sql);
-                  $resultCheck = mysqli_num_rows($result);
+               if ($cart[0] != "") {
+                  foreach ($cart as &$value) {
+                     $sql = 'SELECT * FROM products WHERE id = ' . $value;
+                     $result = mysqli_query($conn, $sql);
+                     $resultCheck = mysqli_num_rows($result);
 
-                  if ($resultCheck > 0) {
-                     while ($data = mysqli_fetch_assoc($result)) {
-                        print '<div style="display: grid; grid-template-columns: 1fr 6fr 8fr; grid-gap: 0.5em;"><span style="text-align: left">x'.$duplicates[$value].'</span><span style="text-align:right; padding-bottom: 0.5em;">'.$data['price'].'</span><span>Product - '.$data['id'].'</span></div>';
+                     if ($resultCheck > 0) {
+                        while ($data = mysqli_fetch_assoc($result)) {
+                           print '<div style="display: grid; grid-template-columns: 2fr 6fr 8fr; grid-gap: 0.5em;"><span style="text-align: left">x'.$duplicates[$value].'</span><span style="text-align:right; padding-bottom: 0.5em;">'.$data['price'].'</span><span>Product - '.$data['id'].'</span></div>';
+                        }
                      }
                   }
                }

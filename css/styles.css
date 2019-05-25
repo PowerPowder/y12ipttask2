@@ -231,6 +231,14 @@ h1, h2, h3, h4, h5, h6 {
    padding: 0.5em;
    background: #26b864;
    color: #fff;
+
+   -webkit-touch-callout: none; /* iOS Safari */
+     -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Firefox */
+         -ms-user-select: none; /* Internet Explorer/Edge */
+             user-select: none; /* Non-prefixed version, currently
+                                   supported by Chrome and Opera */
 }
 
 .buy-now:active {
@@ -297,7 +305,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .copyright {
-   font-size: 2em;
    padding-right: 0.5em;
 }
 
