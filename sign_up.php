@@ -1,7 +1,13 @@
+<?php
+   $cart = array_unique(explode(' ', $_COOKIE['cart']));
+   $num_of_products = count($cart);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
    <link rel="stylesheet" href="css/styles.css">
+   <link rel="stylesheet" href="css/media-queries.css">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
    <script src="main.js"></script>
@@ -49,17 +55,20 @@
             </div>
          </div>
       </div>
+
       <div class="content" style="display:grid; grid-template-columns: 3fr 1fr 3fr;">
          <div></div>
          <form class="creds" action="sign_up_process.php" method="POST">
-            <b style="border-bottom: 1px solid #ccc; padding-bottom: 1em;">Sign In</b>
+            <b style="border-bottom: 1px solid #ccc; padding-bottom: 1em;">Sign up</b>
+            <input type="email" placeholder="Email" name="email">
             <input type="text" placeholder="Username" name="username">
             <input type="password" placeholder="Password" name="password">
-            <input type="submit" value="Sign in">
-            <a href="sign_up.php">Create an account</a> 
-         </form> 
+            <input type="password" placeholder="Confirm password" name="password-confirm">
+            <input type="submit" value="Sign Up">
+            <a href="login.php">Sign in</a> 
+         </form>
          <div></div>
-      </div> 
+      </div>
 
       <div class="footer">
          <div class="section">
@@ -76,4 +85,3 @@
    </div>
 </body>
 </html>
-

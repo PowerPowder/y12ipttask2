@@ -4,7 +4,7 @@
 
 <?php
 $query = intval($_GET['query']);
-$conn = mysqli_connect("localhost", "reagan", "password", "db1");
+include 'config.php';
 $query = '';
 
 switch($_GET['query']) {

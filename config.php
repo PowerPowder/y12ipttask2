@@ -1,5 +1,1 @@
-<?php
-   include 'cart.php';
-   
-   $products = $num_of_products;
-?>
+<?php $conn = mysqli_connect("localhost", "reagan", "password", "db1"); ?>

@@ -4,7 +4,8 @@
    $num_of_products = count($cart);
 
    $total_cost = 0;
-   $conn = mysqli_connect("localhost", "reagan", "password", "db1");
+
+   include 'config.php';
 
    if ($cart[0] != "") {
       foreach ($cart as &$value) {

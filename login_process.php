@@ -4,7 +4,7 @@
    $username = $_POST['username'];
    $password = $_POST['password'];
    
-   $conn = mysqli_connect("localhost", "reagan", "password", "db1");
+   include 'config.php';
 
    $username = stripcslashes($username);
    $password = stripcslashes($password);
